@@ -1,0 +1,382 @@
+{
+	"sqlQuery": {
+		"selectClause": {
+			"args": [
+				{
+					"sqlClass": "ColumnIdentifier",
+					"value": "SIDF",
+					"parentTable": "A"
+				},
+				{
+					"sqlClass": "ColumnIdentifier",
+					"value": "GDNRF",
+					"parentTable": "A"
+				},
+				{
+					"sqlClass": "ColumnIdentifier",
+					"value": "SIDB",
+					"parentTable": "A"
+				},
+				{
+					"sqlClass": "ColumnIdentifier",
+					"value": "GDNRB",
+					"parentTable": "A"
+				},
+				{
+					"sqlClass": "ColumnIdentifier",
+					"value": "PROZJAHRSUM"
+				},
+				{
+					"sqlClass": "ColumnIdentifier",
+					"value": "FANRV",
+					"parentTable": "C"
+				},
+				{
+					"sqlClass": "ColumnIdentifier",
+					"value": "FANR",
+					"parentTable": "C"
+				},
+				{
+					"sqlClass": "ColumnIdentifier",
+					"value": "STNR",
+					"parentTable": "C"
+				},
+				{
+					"sqlClass": "ColumnIdentifier",
+					"value": "DATLOE",
+					"parentTable": "C"
+				},
+				{
+					"sqlClass": "ColumnIdentifier",
+					"value": "NAME",
+					"parentTable": "E"
+				},
+				{
+					"sqlClass": "ColumnIdentifier",
+					"value": "ABSTELLE",
+					"parentTable": "E"
+				}
+			]
+		},
+		"fromClause": {
+			"args": [
+				{
+					"sqlClass": "Alias",
+					"args": [
+						{
+							"sqlQuery": {
+								"selectClause": {
+									"args": [
+										{
+											"sqlClass": "ColumnIdentifier",
+											"value": "SIDF",
+											"parentTable": "AETFBET"
+										},
+										{
+											"sqlClass": "ColumnIdentifier",
+											"value": "GDNRF",
+											"parentTable": "AETFBET"
+										},
+										{
+											"sqlClass": "ColumnIdentifier",
+											"value": "SIDB",
+											"parentTable": "AETFBET"
+										},
+										{
+											"sqlClass": "ColumnIdentifier",
+											"value": "GDNRB",
+											"parentTable": "AETFBET"
+										},
+										{
+											"sqlClass": "Alias",
+											"args": [
+												{
+													"sqlClass": "Sum",
+													"args": [
+														{
+															"sqlClass": "ColumnIdentifier",
+															"value": "PROZ_J",
+															"parentTable": "AETFBET"
+														}
+													]
+												}
+											],
+											"value": "PROZJAHRSUM"
+										}
+									]
+								},
+								"fromClause": {
+									"args": [
+										{
+											"sqlClass": "TableIdentifier",
+											"value": "AETFBET"
+										}
+									]
+								},
+								"whereClause": {
+									"args": [
+										{
+											"sqlClass": "LogicalConjunction",
+											"leftOperand": {
+												"sqlClass": "EqualityComparison",
+												"leftOperand": {
+													"sqlClass": "FunctionExpression",
+													"args": [
+														{
+															"sqlClass": "ColumnIdentifier",
+															"value": "TSBIS",
+															"parentTable": "--UNKNOWN--"
+														}
+													],
+													"value": "YEAR"
+												},
+												"rightOperand": {
+													"sqlClass": "NumberFunction",
+													"value": 9999
+												}
+											},
+											"rightOperand": {
+												"sqlClass": "LogicalConjunction",
+												"leftOperand": {
+													"sqlClass": "EqualityComparison",
+													"leftOperand": {
+														"sqlClass": "ColumnIdentifier",
+														"value": "VID",
+														"parentTable": "--UNKNOWN--"
+													},
+													"rightOperand":{
+														"sqlClass": "ColumnIdentifier",
+														"value": "VID",
+														"parentTable": "AETFBET"
+													}
+												},
+												"rightOperand": {
+													"sqlClass": "EqualityComparison",
+													"leftOperand": {
+														"sqlClass": "ColumnIdentifier",
+														"value": "STATUS",
+														"parentTable": "--UNKNOWN--"
+													},
+													"rightOperand":{
+														"sqlClass": "StringOperator",
+														"value": "AETFIX"
+													}
+												}
+											}
+										}
+									]
+								},
+								"groupByClause":{
+									"args": [
+										{
+											"sqlClass": "ColumnIdentifier",
+											"value": "SIDF",
+											"parentTable": "AETFBET"
+										},
+										{
+											"sqlClass": "ColumnIdentifier",
+											"value": "GDNRF",
+											"parentTable": "AETFBET"
+										},
+										{
+											"sqlClass": "ColumnIdentifier",
+											"value": "SIDB",
+											"parentTable": "AETFBET"
+										},
+										{
+											"sqlClass": "ColumnIdentifier",
+											"value": "GDNRB",
+											"parentTable": "AETFBET"
+										}
+									]
+								}
+							}
+						}
+					],
+					"value": "A"
+				},
+				{
+					"sqlClass": "Alias",
+					"args": [
+						{
+							"sqlClass": "TableIdentifier",
+							"value": "AETSGDV"
+						}
+					],
+					"value": "C"
+				},
+				{
+					"sqlClass": "Alias",
+					"args": [
+						{
+							"sqlClass": "TableIdentifier",
+							"value": "AETSGD"
+						}
+					],
+					"value": "E"
+				}
+			]
+		},
+		"whereClause": {
+			"args": [
+				{
+					"sqlClass": "LogicalConjunction",
+					"leftOperand": {
+						"sqlClass": "EqualityComparison",
+						"leftOperand": {
+							"sqlClass": "ColumnIdentifier",
+							"value": "SIDB",
+							"parentTable": "A"
+						},
+						"rightOperand": {
+							"sqlClass": "ColumnIdentifier",
+							"value": "SID",
+							"parentTable": "C"
+						}
+					},
+					"rightOperand": {
+						"sqlClass": "LogicalConjunction",
+						"leftOperand": {
+							"sqlClass": "EqualityComparison",
+							"leftOperand": {
+								"sqlClass": "ColumnIdentifier",
+								"value": "GDNRB",
+								"parentTable": "A"
+							},
+							"rightOperand": {
+								"sqlClass": "ColumnIdentifier",
+								"value": "GDNR",
+								"parentTable": "C"
+							}
+						},
+						"rightOperand": {
+							"sqlClass": "LogicalConjunction",
+							"leftOperand": {
+								"sqlClass": "EqualityComparison",
+								"leftOperand": {
+									"sqlClass": "FunctionExpression",
+									"args": [
+										{
+											"sqlClass": "ColumnIdentifier",
+											"value": "TSBIS",
+											"parentTable": "C"
+										}
+									],
+									"value": "YEAR"
+								},
+								"rightOperand": {
+									"sqlClass": "NumberFunction",
+									"value": 9999
+								}
+							},
+							"rightOperand": {
+								"sqlClass": "LogicalConjunction",
+								"leftOperand": {
+									"sqlClass": "EqualityComparison",
+									"leftOperand": {
+										"sqlClass": "ColumnIdentifier",
+										"value": "SIDB",
+										"parentTable": "A"
+									},
+									"rightOperand": {
+										"sqlClass": "ColumnIdentifier",
+										"value": "SID",
+										"parentTable": "E"
+									}
+								},
+								"rightOperand": {
+									"sqlClass": "LogicalConjunction",
+									"leftOperand": {
+										"sqlClass": "GreaterEqual",
+										"leftOperand": {
+											"sqlClass": "ColumnIdentifier",
+											"value": "FANR",
+											"parentTable": "C"
+										},
+										"rightOperand": {
+											"sqlClass": "ColumnIdentifier",
+											"value": "MFANR",
+											"parentTable": "--UNKNOWN--"
+										}
+									},
+									"rightOperand": {
+										"sqlClass": "LogicalConjunction",
+										"leftOperand": {
+											"sqlClass": "GreaterEqual",
+											"leftOperand": {
+												"sqlClass": "ColumnIdentifier",
+												"value": "STNR",
+												"parentTable": "C"
+											},
+											"rightOperand": {
+												"sqlClass": "ColumnIdentifier",
+												"value": "MSTNR",
+												"parentTable": "--UNKNOWN--"
+											}
+										},
+										"rightOperand": {
+											"sqlClass": "GreaterEqual",
+											"leftOperand": {
+												"sqlClass": "FunctionExpression",
+												"args": [
+													{
+														"sqlClass": "FunctionExpression",
+														"args": [
+															{
+																"sqlClass": "ColumnIdentifier",
+																"value": "NAME",
+																"parentTable": "E"
+															}
+														],
+														"value": "UPPER"
+													},
+													{
+														"sqlClass": "Subtraction",
+														"leftOperand": {
+															"sqlClass": "NumberFunction",
+															"value": 0
+														},
+														"rightOperand": {
+															"sqlClass": "ColumnIdentifier",
+															"value": "ABSTELLE",
+															"parentTable": "E"
+														}
+													}
+												],
+												"value": "SUBSTR"
+											},
+											"rightOperand": {
+												"sqlClass": "ColumnIdentifier",
+												"value": "MNAME",
+												"parentTable": "--UNKNOWN--"
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			]
+		},
+		"orderByClause": {
+			"args": [
+				{
+					"sqlClass": "ColumnIdentifier",
+					"value": "FANRV",
+					"parentTable": "C"
+				},
+				{
+					"sqlClass": "ColumnIdentifier",
+					"value": "FANR",
+					"parentTable": "C"
+				},
+				{
+					"sqlClass": "ColumnIdentifier",
+					"value": "STNR",
+					"parentTable": "C"
+				}
+			]
+		}
+	}
+}

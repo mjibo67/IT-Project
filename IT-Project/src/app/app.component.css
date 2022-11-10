@@ -1,0 +1,34 @@
+.select {
+  background-color: yellow;
+  width: 15vw;
+}
+
+.select-text {
+  background-color: blue;
+  color: white;
+}
+
+.from {
+  background-color: yellow;
+  width: 15vw;
+}
+
+.from-text {
+  background-color: blue;
+  color: white;
+}
+
+.where {
+  background-color: yellow;
+  width: 15vw;
+}
+
+.where-text {
+  background-color: blue;
+  color: white;
+}
+
+.cover {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
