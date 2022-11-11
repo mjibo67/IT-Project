@@ -1,21 +1,11 @@
-<div class="cover">
-
-
-<div class="select">
-  <div class="select-text">
-    <h2>Select</h2>
-  </div>
-  <div class="select-contents">
-    <p *ngFor="let select of sqlQueryData.sqlQuery.selectClause.args">{{select.value}}</p>
-  </div>
-</div>
+<div class="whereFrom">
 
 
 <div class="from">
   <div class="from-text">
     <h2>From</h2>
   </div>
-  <div class="select-contents">
+  <div class="from-contents">
     <p *ngFor="let select of sqlQueryData.sqlQuery.fromClause.args">{{select.value}}</p>
   </div>
 </div>
@@ -25,14 +15,26 @@
   <div class="where-text">
     <h2>Where</h2>
   </div>
-  <div class="select-contents">
+  <div class="where-contents">
     <p *ngFor="let select of sqlQueryData.sqlQuery.whereClause.args">
       {{select.leftOperand.leftOperand.value}}</p>
       <p *ngFor="let select of sqlQueryData.sqlQuery.whereClause.args">
-        {{select.leftOperand.rightOperand.value}}</p>
+        {{select.rightOperand.leftOperand.value}}</p>
         <p *ngFor="let select of sqlQueryData.sqlQuery.whereClause.args">
-          {{select.rightOperand.leftOperand.leftOperand.value}}</p>
+          {{select.rightOperand.rightOperand.value}}</p>
   </div>
 </div>
 
+</div>
+
+<div class="select">
+
+<div class="selected">
+  <div class="select-text">
+    <h2>Select</h2>
+  </div>
+  <div class="select-contents">
+    <p *ngFor="let select of sqlQueryData.sqlQuery.selectClause.args">{{select.value}}</p>
+  </div>
+</div>
 </div>

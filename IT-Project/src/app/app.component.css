@@ -1,34 +1,85 @@
-.select {
-  background-color: yellow;
-  width: 15vw;
+div.selected, div.where, div.from {
+  height: 350px;
+  width: 250px;
+  border: 1px solid blue;
+    margin-bottom: 18px;
+    position: relative;
 }
 
-.select-text {
-  background-color: blue;
-  color: white;
+div.whereFrom, div.select {
+  position: relative;
+   float: left;
+   min-height: 1px;
 }
 
-.from {
-  background-color: yellow;
-  width: 15vw;
+div.whereFrom, div.select {
+  position: relative;
+   float: left;
+   min-height: 1px;
 }
 
-.from-text {
-  background-color: blue;
-  color: white;
+div.selected {
+  left: 250px;
+  top: 200px;
 }
 
-.where {
-  background-color: yellow;
-  width: 15vw;
+div.from::after, div.where::after {
+  content: '';
+  height: 1px;
+  background: black;
+  width: 150px;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+  left: 250px;
+  position: absolute;
+  top: 50%;
+}
+div.selected::after {
+  content: '';
+   height: 1px;
+   background: black;
+   width: 99px;
+   display: inline-block;
+   vertical-align: middle;
+   line-height: normal;
+   left: -100px;
+   position: absolute;
+   top: 50%;
+}
+div.selected::before {
+  content: '';
+   height: 175px;
+   background: black;
+   width: 1px;
+   display: inline-block;
+   vertical-align: middle;
+   line-height: normal;
+   position: absolute;
+   top: 50%;
+   left: -102px;
 }
 
-.where-text {
-  background-color: blue;
-  color: white;
+div.from::before {
+  content: '';
+   height: 200px;
+   background: black;
+   width: 1px;
+   display: inline-block;
+   vertical-align: middle;
+   line-height: normal;
+   position: absolute;
+   top: 50%;
+   left: 400px;
 }
 
-.cover {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+
+.select-text, .from-text, .where-text  {
+  background-color: #eeeee4;
+  align-items: center;
+  text-align: center;
+}
+
+.select-contents, .from-contents, .where-contents {
+  background-color: #abdbe3;
 }
